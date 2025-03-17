@@ -1,0 +1,167 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+- Glance:
+  - Glance:
+      id: glance
+      widget:
+        type: iframe
+        name: myIframe
+        src: http://grnchkali:8086
+        classes: glance
+        referrerPolicy: same-origin # optional, no default
+        allowPolicy: autoplay; fullscreen; gamepad # optional, no default
+        allowFullscreen: false # optional, default: true
+        loadingStrategy: eager # optional, default: eager
+        allowScrolling: yes # optional, default: yes
+
+
+- HamRadio:
+   - Hamclock:
+      id: hclock
+      widget:
+        type: iframe
+        src: http://grnchweb:8081/live.html
+        classes: glance
+        referrerPolicy: same-origin # optional, no default
+        allowPolicy: autoplay; fullscreen; gamepad # optional, no default
+        allowFullscreen: false # optional, default: true
+        loadingStrategy: eager # optional, default: eager
+        allowScrolling: yes # optional, default: yes
+   - Hamdash:
+      id: hdash
+      widget:
+        type: iframe
+        src: http://grnchkali/ham/hamdash.html
+        classes: glance
+        referrerPolicy: same-origin # optional, no default
+        allowPolicy: autoplay; fullscreen; gamepad # optional, no default
+        allowFullscreen: false # optional, default: true
+        loadingStrategy: eager # optional, default: eager
+        allowScrolling: yes # optional, default: yes
+
+- GrnchRPIs:
+    - HamClock:
+          href: http://grnchweb:8081/live.html
+          description: Hamclock Live
+          siteMonitor: http://grnchweb:8081
+    - Pi-Weather Station:
+          href: http://grnchweb:4701
+          description: Pi Weather Station
+          siteMonitor: http://grnchweb:4701
+    - Pi-Web Monitoring:
+          href: http://grnchweb:19999/
+          description: Netdata
+          siteMonitor: http://grnchweb:19999/
+          widget:
+            type: netdata
+            url: http://grnchweb:19999/
+    - Pi-Hole Monitoring:
+          href: http://grnchhole:19999/
+          description: Netdata
+          siteMonitor: http://grnchhole:19999/
+          widget:
+            type: netdata
+            url: http://grnchhole:19999/
+    - Pi-Hole:
+          href: http://grnchhole.local/admin/login.php
+          description: PiHole
+          widget:
+            type: pihole
+            url: http://grnchhole:8080
+            version: 6 # required if running v6 or higher, defaults to 5
+            key: PQsBxskf # optional, in v6 can be your password or app password
+
+- GrnchKali:
+    - HamDash:
+          href: http://grnchkali/ham/hamdash.html
+          description: HamDashboard
+          siteMonitor: http://grnchkali
+    - Wavelog:
+          href: http://grnchkali/Wavelog/index.php
+          description: Wavelog logging
+          siteMonitor: http://grnchkali
+    - Glance:
+          href: http://grnchkali:8086
+          description: Glance Frontpage
+          siteMonitor: http://grnchkali:8086
+    - Kali Monitoring:
+          href: http://grnchkali:19999/
+          description: Netdata
+          siteMonitor: http://grnchkali:19999/
+          widget:
+            type: netdata
+            url: http://grnchkali:19999/
+    - Actual:
+          href: https://grnchkali:5006
+          description: Actual Budgeting
+          siteMonitor: http://grnchkali
+          server: my-docker
+          container: actual
+          showStats: true
+    - Trilium:
+          href: http://grnchkali:8080
+          description: Trilium Note taking
+          siteMonitor: http://grnchkali:8080
+          server: my-docker
+          container: trilium_next
+          showStats: true
+    - GrnchFed:
+          href: https://grnchfed:9090/system
+          description: Fedora Server
+          siteMonitor: https://grnchfed:9090/system
+    - Jekyll:
+          href: http://grnchfed:8080
+          description: Jekyll website
+          siteMonitor: http://grnchfed:8080
+    - GRNCH:
+          href: https://grnch.xyz
+          description: Artist Website
+          siteMonitor: https://grnch.xyz
+
+- GrnchArtServer:
+    - Hydra:
+          href: http://grnchserver:8000
+          description: Hydra video synth
+          siteMonitor: http://grnchserver:8000
+    - GRNCH.xyz:
+          href: http://grnchserver
+          description: Local HTML site
+          siteMonitor: http://grnchserver
+    - Hoarder:
+          href: http://grnchserver:3000
+          description: Hoarder Link saving
+          siteMonitor: http://grnchserver:3000
+    - Server Monitoring:
+          href: http://grnchserver:19999/
+          description: Netdata
+          siteMonitor: http://grnchserver:19999/
+          widget:
+            type: netdata
+            url: http://grnchserver:19999/
+    - IT Tools:
+          href: http://grnchserver:8080
+          description: IT Tools
+          siteMonitor: http://grnchserver:8080
+    - Calendar:
+          href: https://calendar.google.com/calendar/embed?src=woody.poulard%40gmail.com&ctz=America%2FNew_York
+          widget:
+            type: calendar
+            firstDayInWeek: sunday # optional - defaults to monday
+            view: monthly # optional - possible values monthly, agenda
+            maxEvents: 10 # optional - defaults to 10
+            showTime: true # optional - show time for event happening today - defaults to false
+            timezone: America/New_York # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
+            integrations: # optional
+              - type: # active widget type that is currently enabled on homepage - possible values: radarr, sonarr, lidarr, readarr, ical
+                service_group: # group name where widget exists
+                service_name: # service name for that widget
+                color: # optional - defaults to pre-defined color for the service (teal for sonarr)
+                params: # optional - additional params for the service
+                  unmonitored: true # optional - defaults to false, used with *arr stack
+              - type: ical # Show calendar events from another service
+                url: https://calendar.google.com/calendar/ical/woody.poulard%40gmail.com/public/basic.ics # URL with calendar events
+                name: My Events # required - name for these calendar events
+                color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
+                params: # optional - additional params for the service
+                  showName: true # optional - show name before event title in event line - defaults to false

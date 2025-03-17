@@ -1,0 +1,35 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+title: GRNCH Hompage
+background:
+    image: https://images.unsplash.com/photo-1735705881864-4b216f5defbe?auto=format&fit=crop&w=2560&q=80
+    blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+    saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+    brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+    opacity: 50 # 0-100
+cardBlur: sm # sm, "", md, etc... see https://tailwindcss.com/docs/backdrop-blur
+favicon: http://www.grnch.xyz/favicon.ico
+hideVersion: true
+showStats: true
+
+layout:
+    GrnchRPIs:
+      header: true
+    GrnchKali:
+      header: true
+    GrnchArtServer:
+      header: true
+    Glance:
+      header: true
+      initiallyCollapsed: true
+      style: row
+      columns: 1
+    HamRadio:
+      header: true
+      initiallyCollapsed: true
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+

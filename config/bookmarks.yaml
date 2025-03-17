@@ -1,0 +1,68 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- Frequents:
+    - Github:
+        - abbr: GH
+          href: https://github.com/grinchdubs
+    - QRZ:
+        - abbr: QRZ
+          href: https://www.qrz.com/
+    - Router:
+        - abbr: R
+          href: http://192.168.1.1
+    - Pota.app:
+        - abbr: PoTa
+          href: http://pota.app
+
+- Social:
+    - Reddit:
+        - abbr: RE
+          href: https://reddit.com/
+    - Hackaday:
+        - abbr: HD
+          href: https://hackaday.com
+    - Derivative:
+        - abbr: TD
+          href: https://derivative.ca/community
+    - XDA:
+        - abbr: XDA
+          href: https://www.xda-developers.com/
+
+- Entertainment:
+    - YouTube:
+        - abbr: YT
+          href: https://youtube.com/
+    - CyTube:
+        - abbr: CY
+          href: https://cytu.be
+    - HiMovies:
+        - abbr: HM
+          href: https://himovies.sx
+    - HiAnime:
+        - abbr: HA
+          href: https://hianime.sx
+
+- Email:
+  - CubanB95:
+        - abbr: CB
+          href: https://mail.google.com/mail/u/0/#inbox
+  - Woody.Poulard:
+        - abbr: WP
+          href: https://mail.google.com/mail/u/1/#inbox
+  - Grnch@Grnch.xyz:
+        - abbr: GRP
+          href: https://mail.google.com/mail/u/3/#inbox
+  - Woody@nycresistor:
+        - abbr: NYCR
+          href: https://mail.google.com/mail/u/6/#inbox
+  - Fabrimakr:
+        - abbr: FB
+          href: https://mail.google.com/mail/u/4/#inbox
+  - KC1VOP:
+        - abbr: HAM
+          href: https://mail.google.com/mail/u/7/#inbox
+  - ProtonMail: 
+        - abbr: PM
+          href: https://mail.proton.me/u/1/inbox/gV7uduDl--UfXS5KGOzMdxYrsqSlR4nR9bdLNctkKjEwnWy1usTQtaswGhYLxZxSGbhoL32xzGuGbM6h759a2Q==

@@ -1,0 +1,33 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/info-widgets/
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+    cputemp: true # disabled by default
+    uptime: true # disabled by default
+
+
+- search:
+    provider: google
+    showSearchSuggestions: true
+    target: _blank
+
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: long
+      timeStyle: long
+      hourCycle: h23
+- openweathermap:
+    label: New York #optional
+    latitude: 40.681412
+    longitude: -73.953548
+    units: metric # or imperial
+    provider: openweathermap
+    apiKey: b8e441526bd78a6b4f32f416258b8b31 # required only if not using provider, this reveals api key in requests
+    cache: 5 # Time in minutes to cache API responses, to stay within limits
+    format: # optional, Intl.NumberFormat options
+      maximumFractionDigits: 1
